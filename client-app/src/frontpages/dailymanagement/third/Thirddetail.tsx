@@ -42,18 +42,18 @@ const Thirddetail: React.FC<RouteComponentProps<DetailParams>> = ({
         <Card.Header>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Item ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {thirdparty!.companyName}</Card.Header>
         <Table definition>
     <Table.Body>
-      <Table.Row>
+      {/* <Table.Row>
         <Table.Cell collapsing>ID</Table.Cell>
         <Table.Cell> {thirdparty!.id} </Table.Cell>
-      </Table.Row>
+      </Table.Row> */}
       <Table.Row>
         <Table.Cell collapsing>Company Name</Table.Cell>
         <Table.Cell> {thirdparty!.companyName} </Table.Cell>
       </Table.Row>
-      <Table.Row>
+      {/* <Table.Row>
         <Table.Cell collapsing>Status</Table.Cell>
         <Table.Cell> {thirdparty!.status} </Table.Cell>
-      </Table.Row>
+      </Table.Row> */}
       <Table.Row>
         <Table.Cell collapsing>Type</Table.Cell>
         <Table.Cell> {thirdparty!.type} </Table.Cell>
@@ -71,10 +71,10 @@ const Thirddetail: React.FC<RouteComponentProps<DetailParams>> = ({
         <Table.Cell collapsing>Email</Table.Cell>
         <Table.Cell> {thirdparty!.email} </Table.Cell>
       </Table.Row>
-      <Table.Row>
+      {/* <Table.Row>
         <Table.Cell collapsing>Project</Table.Cell>
         <Table.Cell> {thirdparty!.project} </Table.Cell>
-      </Table.Row>
+      </Table.Row> */}
 
       <Table.Row>
         <Table.Cell collapsing>Create Time</Table.Cell>

@@ -69,6 +69,7 @@ class ThirdStore {
   @action createThirdParty = async (thirdparty: IThirdparty) => {
     this.submitting = true;
     try {
+      thirdparty.id = '0';
       thirdparty.createdAt = new Date().toJSON();
       thirdparty.updatedAt = new Date().toJSON();
       await agent.ThirdParties.create(thirdparty);

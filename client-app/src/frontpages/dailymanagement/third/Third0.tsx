@@ -20,8 +20,8 @@ const Third0: React.FC = () => {
         <Table.HeaderCell>ContactPerson</Table.HeaderCell>
         <Table.HeaderCell>Phone</Table.HeaderCell>
         <Table.HeaderCell>Email</Table.HeaderCell>
-        <Table.HeaderCell>Status</Table.HeaderCell>
-        <Table.HeaderCell>Project</Table.HeaderCell>
+        {/* <Table.HeaderCell>Status</Table.HeaderCell> */}
+        {/* <Table.HeaderCell>Project</Table.HeaderCell> */}
         <Table.HeaderCell width={1}>Action</Table.HeaderCell>
       </Table.Row>
     </Table.Header>
@@ -34,12 +34,12 @@ const Third0: React.FC = () => {
         <Table.Cell>{thirdlist.createdAt}</Table.Cell>
         <Table.Cell> {thirdlist.updatedAt}</Table.Cell> */}
         <Table.Cell>{thirdlist.companyName}</Table.Cell>
-        <Table.Cell>{thirdlist.status}</Table.Cell>
         <Table.Cell>{thirdlist.type}</Table.Cell>
         <Table.Cell>{thirdlist.contactPerson}</Table.Cell>
         <Table.Cell>{thirdlist.phone}</Table.Cell>
         <Table.Cell>{thirdlist.email}</Table.Cell>
-        <Table.Cell>{thirdlist.project}</Table.Cell>
+        {/* <Table.Cell>{thirdlist.status}</Table.Cell> */}
+        {/* <Table.Cell>{thirdlist.project}</Table.Cell> */}
         <Table.Cell>
         <Button.Group size='mini'>
           {/* link to detail and edit */}

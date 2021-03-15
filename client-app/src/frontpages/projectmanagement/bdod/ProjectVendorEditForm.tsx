@@ -1,5 +1,5 @@
 import React, { useContext, FormEvent, useState } from 'react';
-import { Button, Form, Input } from 'semantic-ui-react';
+import { Button, Form, Input, Select } from 'semantic-ui-react';
 import ProjectStore from '../../../app/stores/projectStore';
 import { observer } from 'mobx-react-lite';
 // import { IProjectTask } from '../../../app/models/projecttask';
@@ -22,6 +22,13 @@ const ProjectVendorEditForm: React.FC = () => {
     setProjectVendor({ ...projectvendor, [name]: value });
   };
 
+  const status = [
+    { key: 'Applied', text: 'Applied', value: 'Applied' },
+    { key: 'Approved', text: 'Approved', value: 'Approved' },
+    { key: 'Booking', text: 'Booking', value: 'Booking' },
+    { key: 'Booked', text: 'Booked', value: 'Booked' }
+  ];
+
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group>
@@ -29,10 +36,21 @@ const ProjectVendorEditForm: React.FC = () => {
       &nbsp;&nbsp;&nbsp;<span style={{color: 'blue', fontSize: 22, fontWeight: "bold", textAlign: 'center'}}>{projectvendor!.companyName}:</span> 
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </Form.Field>
+
       <Form.Field inline>
         <label>status</label>
-        <Input onChange={handleInputChange} name='status' value={projectvendor!.status} />
+        {/* <Input onChange={handleInputChange} name='status' value={projectvendor!.status} /> */}
+        <Select
+          required
+          onChange = {(e, { name, value }) => setProjectVendor({ ...projectvendor, [name]: value })}
+          options={status}
+          search
+          name='status'
+          placeholder='Status'
+          value={projectvendor.status} 
+        />
       </Form.Field>
+      
       <Form.Field inline>
         <label>attachment</label>
         <Input onChange={handleInputChange} name='attachment' value={projectvendor!.attachment} />

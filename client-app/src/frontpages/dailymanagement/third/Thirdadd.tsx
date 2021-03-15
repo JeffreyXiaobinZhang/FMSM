@@ -47,10 +47,16 @@ const Thirdadd: React.FC<RouteComponentProps> = ({
     setAdd({ ...thirdparty, [name]: value });
   };
 
+  const typeOpt = [
+    {key:'EWP', text:'EWP',value:'EWP'},
+    {key:'Security', text:'Security',value:'Security'},
+    {key:'Building management', text:'Building management',value:'Building management'},
+    {key:'customer', text:'customer',value:'customer'},
+  ]
   return (
     <Segment clearing>
       <Form onSubmit={handleSubmit}>
-        <Form.Input
+        {/* <Form.Input
           label='ID'
           required
           onChange={handleInputChange}
@@ -72,7 +78,7 @@ const Thirdadd: React.FC<RouteComponentProps> = ({
           name='updatedAt'
           placeholder='Updated At'
           value={thirdparty.updatedAt}
-        />
+        /> */}
         <Form.Input
         label='Company Name'
         required
@@ -81,18 +87,20 @@ const Thirdadd: React.FC<RouteComponentProps> = ({
           placeholder='Company Name'
           value={thirdparty.companyName}
         />
-        <Form.Input
+        {/* <Form.Input
         label='Status'
           onChange={handleInputChange}
           name='status'
           placeholder='Status'
           value={thirdparty.status}
-        />
-        <Form.Input
-        label='Type'
-          onChange={handleInputChange}
-          name='type'
+        /> */}
+        <Form.Select
+          fluid
+          label='Type'
+          options = {typeOpt}
           placeholder='Type'
+          onChange = { (e,{ name, value}) => setAdd({...thirdparty,[name]: value}) }
+          name='type'
           value={thirdparty.type}
         />
         <Form.Input
@@ -116,13 +124,13 @@ const Thirdadd: React.FC<RouteComponentProps> = ({
           placeholder='Email'
           value={thirdparty.email}
         />
-        <Form.Input
+        {/* <Form.Input
         label='Project'
           onChange={handleInputChange}
           name='project'
           placeholder='Project'
           value={thirdparty.project}
-        />
+        /> */}
         <Button
           loading={submitting}
           floated='right'

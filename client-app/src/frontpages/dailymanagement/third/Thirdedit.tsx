@@ -64,10 +64,16 @@ const Thirdedit: React.FC<RouteComponentProps<DetailParams>> = ({
     setThirdParty({ ...thirdparty, [name]: value });
   };
 
+  const typeOpt = [
+    {key:'EWP',text:'EWP',value:'EWP'},
+    {key:'Security',text:'Security',value:'Security'},
+    {key:'Building management',text:'Building management',value:'Building management'},
+    {key:'customer',text:'customer',value:'customer'},
+  ]
   return (
     <Segment clearing>
       <Form onSubmit={handleSubmit}>
-        <Form.Input
+        {/* <Form.Input
           label='ID'
           onChange={handleInputChange}
           name='id'
@@ -88,27 +94,38 @@ const Thirdedit: React.FC<RouteComponentProps<DetailParams>> = ({
           name='updatedAt'
           placeholder='Updated At'
           value={thirdparty.updatedAt}
-        />
+        /> */}
         <Form.Input
           label='Company Name'
-          onChange={handleInputChange}
-          name='companyName'
-          placeholder='Company Name'
-          value={thirdparty.companyName}
+          // onChange={handleInputChange}
+          // name='companyName'
+          placeholder={thirdparty.companyName}
+          readOnly
+          // value={thirdparty.companyName}
         />
-          <Form.Input
+          {/* <Form.Input
             label='Status'
             onChange={handleInputChange}
             name='status'
             placeholder='Status'
             value={thirdparty.status}
-          />
-        <Form.Input
+          /> */}
+        {/* <Form.Input
           label='Type'
           onChange={handleInputChange}
           name='type'
           placeholder='Type'
           value={thirdparty.type}
+          /> */}
+
+        <Form.Select
+          fluid
+          label='Type'
+          options = {typeOpt}
+          placeholder='Type'
+          onChange = {(e,{name,value}) => setThirdParty({...thirdparty,[name]:value})}
+          name = 'type'
+          value = {thirdparty.type}
         />
 
         <Form.Input
@@ -132,13 +149,13 @@ const Thirdedit: React.FC<RouteComponentProps<DetailParams>> = ({
           placeholder='Email'
           value={thirdparty.email}
         />
-        <Form.Input
+        {/* <Form.Input
           label='Project'
           onChange={handleInputChange}
           name='project'
           placeholder='Project'
           value={thirdparty.project}
-        />
+        /> */}
 
 
         <Button
